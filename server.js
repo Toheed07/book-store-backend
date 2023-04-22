@@ -13,6 +13,7 @@ app.use(cors());
 const Book = require("./models/book");
 
 mongodbUrl = "mongodb+srv://toheedjamaal:PCqsnVmrcEah67js@cluster0.tlq4yeu.mongodb.net/?retryWrites=true&w=majority"
+const hostname = '0.0.0.0'
 
 app.get("/books", async (req, res) => {
   try {
@@ -59,6 +60,6 @@ mongoose.connect(
   }
 );
 
-app.listen(process.env.PORT || 6000, () => {
+app.listen(process.env.PORT || 6000, hostname, () => {
   console.log("Server is live");
 });
